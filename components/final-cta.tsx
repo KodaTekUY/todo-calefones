@@ -13,7 +13,7 @@ export function FinalCTA() {
           <span className="display-italic text-amber-deep">hoy mismo</span>!
         </h2>
         <p className="text-lg text-ink/70 max-w-xl mx-auto mb-8 scroll-reveal">
-          Comuníquese por WhatsApp o llamada convencional y le respondemos dentro de las 24 horas. Si es posible, vamos
+          Comuníquese por WhatsApp o llamada telefónica y le respondemos dentro de las 24 horas. Si es posible, vamos
           el mismo día.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center scroll-reveal">

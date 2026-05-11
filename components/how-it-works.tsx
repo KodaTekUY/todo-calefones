@@ -7,7 +7,7 @@ const steps = [
     number: "01",
     icon: MessageCircle,
     title: "Escribinos",
-    description: "Vía WhatsApp o llamada convencional al",
+    description: "Vía WhatsApp o llamada telefónica al",
     cta: "097 074 249",
     ctaHref: "tel:097074249",
     highlight: false,

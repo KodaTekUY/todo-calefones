@@ -19,7 +19,7 @@ const reasons = [
   {
     icon: FileText,
     title: "Presupuesto sin compromiso",
-    description: "Expedimos presupuestos vía WhatsApp o llamada convencional. Consulte sin obligación de contratar.",
+    description: "Expedimos presupuestos vía WhatsApp o llamada telefónica. Consulte sin obligación de contratar.",
     highlighted: false,
   },
   {
