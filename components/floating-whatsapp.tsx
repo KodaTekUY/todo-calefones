@@ -9,7 +9,7 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Abrir WhatsApp"
-      className="hidden sm:fixed bottom-20 sm:bottom-7 right-5 sm:right-7 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform floating-wa-pulse"
+      className="hidden sm:fixed sm:flex bottom-20 sm:bottom-7 right-5 sm:right-7 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full items-center justify-center shadow-2xl hover:scale-110 transition-transform floating-wa-pulse"
     >
       <MessageCircle className="w-7 h-7" fill="currentColor" />
     </a>
