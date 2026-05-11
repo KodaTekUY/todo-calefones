@@ -8,8 +8,8 @@ const steps = [
     icon: MessageCircle,
     title: "Escribinos",
     description: "Vía WhatsApp o llamada telefónica al",
-    cta: "091 493 270",
-    ctaHref: "tel:091493270",
+    cta: "091 622 275",
+    ctaHref: "tel:091622275",
     highlight: false,
   },
   {

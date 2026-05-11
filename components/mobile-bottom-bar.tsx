@@ -16,7 +16,7 @@ export function MobileBottomBar() {
           WhatsApp
         </a>
         <a
-          href="tel:091493270"
+          href="tel:091622275"
           className="flex-1 inline-flex items-center justify-center gap-2 bg-amber text-petrol-deep py-3 rounded-full text-sm font-semibold"
         >
           <Phone className="w-4 h-4" />
