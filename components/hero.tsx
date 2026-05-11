@@ -78,11 +78,11 @@ export function Hero() {
                 Envíenos un WhatsApp
               </a>
               <a
-                href="tel:097074249"
+                href="tel:091493270"
                 className="inline-flex items-center justify-center gap-2.5 bg-transparent text-ink border border-ink/25 px-6 py-3.5 rounded-full text-base font-semibold hover:bg-ink hover:text-cream transition-all"
               >
                 <Phone className="w-4 h-4" />
-                097 074 249
+                091 493 270
               </a>
             </div>
           </div>
@@ -122,11 +122,11 @@ export function Hero() {
                       Enviar WhatsApp
                     </a>
                     <a
-                      href="tel:097074249"
+                      href="tel:091493270"
                       className="inline-flex items-center justify-center gap-2.5 rounded-full border border-cream/20 bg-cream/5 px-4 py-3 text-sm font-semibold text-cream transition-all hover:bg-cream hover:text-petrol"
                     >
                       <Phone className="w-4 h-4" />
-                      Llamar 097 074 249
+                      Llamar 091 493 270
                     </a>
                   </div>
                 </div>

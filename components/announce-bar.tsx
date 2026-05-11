@@ -13,10 +13,10 @@ export function AnnounceBar() {
         <span className="hidden sm:inline text-cream/70">·</span>
         <span className="hidden sm:inline">Servicio en Montevideo y Canelones</span>
         <span className="text-cream/50 mx-1 sm:mx-2">·</span>
-        <a href="tel:097074249" className="quiet-link font-medium">
+        <a href="tel:091493270" className="quiet-link font-medium">
           <div className="flex items-center gap-1">
             <Phone className="w-3 h-3" />
-            <span>097 074 249</span>
+            <span>091 493 270</span>
           </div>
         </a>
       </span>

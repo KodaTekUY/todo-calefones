@@ -30,8 +30,8 @@ export function Footer() {
             <div className="text-xs uppercase tracking-[0.2em] text-cream/50 mb-4">Contacto</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="tel:097074249" className="quiet-link">
-                  097 074 249
+                <a href="tel:091493270" className="quiet-link">
+                  091 493 270
                 </a>
               </li>
               <li>

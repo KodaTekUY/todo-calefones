@@ -27,11 +27,11 @@ export function FinalCTA() {
             Envíenos un WhatsApp
           </a>
           <a
-            href="tel:097074249"
+            href="tel:091493270"
             className="inline-flex items-center justify-center gap-2.5 bg-petrol text-cream px-7 py-4 rounded-full text-base font-semibold hover:bg-petrol-deep transition-all"
           >
             <Phone className="w-4 h-4" />
-            Llamar 097 074 249
+            Llamar 091 493 270
           </a>
         </div>
       </div>
