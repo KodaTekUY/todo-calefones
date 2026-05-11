@@ -1,0 +1,268 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* TodoCalefones Color Palette */
+  --cream: #FAF7F2;
+  --cream-2: #F2EDE4;
+  --ink: #141414;
+  --petrol: #0F3D3E;
+  --petrol-deep: #0A2A2B;
+  --amber: #E8A33D;
+  --amber-deep: #C9842A;
+  --muted: #7A7A75;
+  --line: #E5DFD3;
+  
+  /* Semantic tokens */
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--cream);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--petrol);
+  --primary-foreground: var(--cream);
+  --secondary: var(--cream-2);
+  --secondary-foreground: var(--ink);
+  --accent: var(--amber);
+  --accent-foreground: var(--petrol-deep);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--petrol);
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Fraunces', serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom colors */
+  --color-cream: #FAF7F2;
+  --color-cream-2: #F2EDE4;
+  --color-ink: #141414;
+  --color-petrol: #0F3D3E;
+  --color-petrol-deep: #0A2A2B;
+  --color-amber: #E8A33D;
+  --color-amber-deep: #C9842A;
+  --color-muted: #7A7A75;
+  --color-line: #E5DFD3;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-cream text-ink;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
+  
+  .display-italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  
+  .headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+  
+  .number-display {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* Grain overlay */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-1 { animation-delay: 0.05s; }
+.delay-2 { animation-delay: 0.18s; }
+.delay-3 { animation-delay: 0.32s; }
+.delay-4 { animation-delay: 0.46s; }
+.delay-5 { animation-delay: 0.6s; }
+
+/* Scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marquee */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  flex-shrink: 0;
+  display: flex;
+  gap: 4rem;
+  animation: scroll 38s linear infinite;
+  padding-right: 4rem;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Link underline effect */
+.quiet-link {
+  position: relative;
+  display: inline-block;
+}
+
+.quiet-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quiet-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* WhatsApp pulse */
+.wa-pulse {
+  position: relative;
+}
+
+.wa-pulse::before,
+.floating-wa-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  animation: pulse 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.floating-wa-pulse {
+  isolation: isolate;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Brand cell hover */
+.brand-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.75rem;
+  background: #FAF7F2;
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  color: #141414;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  text-align: center;
+}
+
+.brand-cell:hover {
+  background: #0F3D3E;
+  color: #FAF7F2;
+  transform: translateY(-2px);
+}
+
+/* Pull stat border */
+.pull-stat {
+  border-left: 2px solid #E8A33D;
+  padding-left: 1.25rem;
+}
+
+/* Muted logo orbit */
+.flame-orbit {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--muted);
+  mask: url('/logo.svg') center / contain no-repeat;
+  -webkit-mask: url('/logo.svg') center / contain no-repeat;
+}
+
+/* Safe area for iPhones */
+.safe-area-pb {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.lh-1 {
+  line-height: 1;
+}
