@@ -65,7 +65,7 @@ export default function RootLayout({
               image: "https://todocalefones.com.uy/og-image.jpg",
               "@id": "https://todocalefones.com.uy/",
               url: "https://todocalefones.com.uy/",
-              telephone: "+59897074249",
+              telephone: "+59891622275",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",

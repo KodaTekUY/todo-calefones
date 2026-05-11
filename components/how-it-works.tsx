@@ -113,7 +113,7 @@ export function HowItWorks() {
 
         <div className="mt-8 scroll-reveal">
           <a
-            href="https://wa.me/59897074249?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
+            href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 bg-petrol text-cream px-6 py-3.5 rounded-full text-base font-semibold hover:bg-petrol-deep transition-all hover:-translate-y-0.5"

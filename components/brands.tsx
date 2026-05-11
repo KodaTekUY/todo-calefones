@@ -80,7 +80,7 @@ export function Brands() {
         <div className="mt-8 text-center scroll-reveal">
           <p className="text-sm text-ink/60 mb-3">¿No encuentra la suya?</p>
           <a
-            href="https://wa.me/59897074249?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20mi%20calefón%20es%20marca%20___"
+            href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20mi%20calefón%20es%20marca%20___"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-amber-deep font-medium hover:text-petrol transition-colors"

@@ -69,7 +69,7 @@ export function Hero() {
             {/* CTA Buttons - More prominent on mobile */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3 reveal delay-4">
               <a
-                href="https://wa.me/59897074249?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
+                href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-6 py-3.5 rounded-full text-base font-semibold hover:bg-[#1FB955] transition-all hover:-translate-y-0.5 wa-pulse"
@@ -113,7 +113,7 @@ export function Hero() {
                   <div className="text-xs uppercase tracking-wider text-cream/50 mb-3">Opciones de contacto</div>
                   <div className="grid gap-2">
                     <a
-                      href="https://wa.me/59897074249?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
+                      href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-[#1FB955] hover:-translate-y-0.5"

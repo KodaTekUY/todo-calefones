@@ -35,7 +35,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/59897074249" className="quiet-link" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/59891622275" className="quiet-link" target="_blank" rel="noopener noreferrer">
                   WhatsApp directo
                 </a>
               </li>

@@ -38,7 +38,7 @@ export function Header() {
         </div>
 
         <a
-          href="https://wa.me/59897074249?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
+          href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-petrol text-cream px-4 py-2.5 rounded-full text-sm font-medium hover:bg-petrol-deep transition-colors"
