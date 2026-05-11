@@ -17,7 +17,7 @@ import { ScrollRevealProvider } from "@/components/scroll-reveal-provider"
 export default function Home() {
   return (
     <>
-      <div className="grain pb-20 sm:pb-0">
+      <div className="grain pb-15 sm:pb-0">
         <AnnounceBar />
         <Header />
         <main>
