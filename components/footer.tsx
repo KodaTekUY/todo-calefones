@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { trackContactEvent } from "@/lib/analytics"
+import { TrackedLink } from "@/components/tracked-link"
 
 export function Footer() {
   return (
@@ -28,20 +28,21 @@ export function Footer() {
             <div className="text-xs uppercase tracking-[0.2em] text-cream/50 mb-4">Contacto</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="tel:091622275" onClick={() => trackContactEvent("phone", "footer")} className="quiet-link">
+                <TrackedLink href="tel:091622275" channel="phone" location="footer" className="quiet-link">
                   091 622 275
-                </a>
+                </TrackedLink>
               </li>
               <li>
-                <a
+                <TrackedLink
                   href="https://wa.me/59891622275"
                   className="quiet-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackContactEvent("whatsapp", "footer")}
+                  channel="whatsapp"
+                  location="footer"
                 >
                   WhatsApp directo
-                </a>
+                </TrackedLink>
               </li>
             </ul>
           </div>

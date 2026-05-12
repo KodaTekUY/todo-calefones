@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { MessageCircle } from "lucide-react"
-import { trackContactEvent } from "@/lib/analytics"
+import { TrackedLink } from "@/components/tracked-link"
 
 const navLinks = [
   { href: "#que-hacemos", label: "¿Qué hacemos?" },
@@ -36,16 +36,17 @@ export function Header() {
           ))}
         </div>
 
-        <a
+        <TrackedLink
           href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackContactEvent("whatsapp", "header")}
+          channel="whatsapp"
+          location="header"
           className="inline-flex items-center gap-2 bg-petrol text-cream px-4 py-2.5 rounded-full text-sm font-medium hover:bg-petrol-deep transition-colors"
         >
           <MessageCircle className="w-4 h-4" fill="currentColor" />
           WhatsApp
-        </a>
+        </TrackedLink>
       </nav>
     </header>
   )

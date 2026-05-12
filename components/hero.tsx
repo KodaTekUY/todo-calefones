@@ -1,5 +1,5 @@
 import { MessageCircle, Phone, Clock, MapPin, Wrench, CheckCircle } from "lucide-react"
-import { trackContactEvent } from "@/lib/analytics"
+import { TrackedLink } from "@/components/tracked-link"
 
 const badges = [
   { icon: Clock, label: "Atención hoy", highlight: true },
@@ -67,24 +67,26 @@ export function Hero() {
 
             {/* CTA Buttons - More prominent on mobile */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3 reveal delay-4">
-              <a
+              <TrackedLink
                 href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackContactEvent("whatsapp", "hero-primary")}
+                channel="whatsapp"
+                location="hero-primary"
                 className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-6 py-3.5 rounded-full text-base font-semibold hover:bg-[#1FB955] transition-all hover:-translate-y-0.5 wa-pulse"
               >
                 <MessageCircle className="w-5 h-5" fill="currentColor" />
                 Envíenos un WhatsApp
-              </a>
-              <a
+              </TrackedLink>
+              <TrackedLink
                 href="tel:091622275"
-                onClick={() => trackContactEvent("phone", "hero-secondary")}
+                channel="phone"
+                location="hero-secondary"
                 className="inline-flex items-center justify-center gap-2.5 bg-transparent text-ink border border-ink/25 px-6 py-3.5 rounded-full text-base font-semibold hover:bg-ink hover:text-cream transition-all"
               >
                 <Phone className="w-4 h-4" />
                 091 622 275
-              </a>
+              </TrackedLink>
             </div>
           </div>
 
@@ -115,24 +117,26 @@ export function Hero() {
                 <div className="bg-petrol-deep/50 rounded-xl p-4 mb-4">
                   <div className="text-xs uppercase tracking-wider text-cream/50 mb-3">Opciones de contacto</div>
                   <div className="grid gap-2">
-                    <a
+                    <TrackedLink
                       href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackContactEvent("whatsapp", "hero-card")}
+                      channel="whatsapp"
+                      location="hero-card"
                       className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-[#1FB955] hover:-translate-y-0.5"
                     >
                       <MessageCircle className="w-4 h-4" fill="currentColor" />
                       Enviar WhatsApp
-                    </a>
-                    <a
+                    </TrackedLink>
+                    <TrackedLink
                       href="tel:091622275"
-                      onClick={() => trackContactEvent("phone", "hero-card")}
+                      channel="phone"
+                      location="hero-card"
                       className="inline-flex items-center justify-center gap-2.5 rounded-full border border-cream/20 bg-cream/5 px-4 py-3 text-sm font-semibold text-cream transition-all hover:bg-cream hover:text-petrol"
                     >
                       <Phone className="w-4 h-4" />
                       Llamar 091 622 275
-                    </a>
+                    </TrackedLink>
                   </div>
                 </div>
 

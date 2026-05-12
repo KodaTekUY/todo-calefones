@@ -1,7 +1,5 @@
-"use client"
-
 import { MessageCircle, Camera, Send, CalendarCheck, MoveRight } from "lucide-react"
-import { trackContactEvent } from "@/lib/analytics"
+import { TrackedLink } from "@/components/tracked-link"
 
 const steps = [
   {
@@ -87,13 +85,14 @@ export function HowItWorks() {
               <p className={`text-sm leading-relaxed ${step.highlight ? "text-cream/70" : "text-ink/70"}`}>
                 {step.description}
                 {step.cta && (
-                  <a
+                  <TrackedLink
                     href={step.ctaHref}
-                    onClick={() => trackContactEvent("phone", "how-it-works-step")}
+                    channel="phone"
+                    location="how-it-works-step"
                     className={`font-medium quiet-link ml-1 ${step.highlight ? "text-amber" : "text-petrol"}`}
                   >
                     {step.cta}
-                  </a>
+                  </TrackedLink>
                 )}
               </p>
 
@@ -114,16 +113,17 @@ export function HowItWorks() {
         </p>
 
         <div className="mt-8 scroll-reveal">
-          <a
+          <TrackedLink
             href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackContactEvent("whatsapp", "how-it-works")}
+            channel="whatsapp"
+            location="how-it-works"
             className="inline-flex items-center gap-2.5 bg-petrol text-cream px-6 py-3.5 rounded-full text-base font-semibold hover:bg-petrol-deep transition-all hover:-translate-y-0.5"
           >
             <Send className="w-4 h-4" />
             Solicitar presupuesto por WhatsApp
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { MessageCircle, Phone } from "lucide-react"
-import { trackContactEvent } from "@/lib/analytics"
+import { TrackedLink } from "@/components/tracked-link"
 
 export function FinalCTA() {
   return (
@@ -16,24 +16,26 @@ export function FinalCTA() {
           calefones. Si es posible, vamos el mismo día.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center scroll-reveal">
-          <a
+          <TrackedLink
             href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackContactEvent("whatsapp", "final-cta")}
+            channel="whatsapp"
+            location="final-cta"
             className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-7 py-4 rounded-full text-base font-semibold hover:bg-[#1FB955] transition-all hover:-translate-y-0.5"
           >
             <MessageCircle className="w-5 h-5" fill="currentColor" />
             Envíenos un WhatsApp
-          </a>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href="tel:091622275"
-            onClick={() => trackContactEvent("phone", "final-cta")}
+            channel="phone"
+            location="final-cta"
             className="inline-flex items-center justify-center gap-2.5 bg-petrol text-cream px-7 py-4 rounded-full text-base font-semibold hover:bg-petrol-deep transition-all"
           >
             <Phone className="w-4 h-4" />
             Llamar 091 622 275
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </section>

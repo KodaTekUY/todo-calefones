@@ -24,20 +24,6 @@ Este sitio quedó optimizado como landing principal, que es el alcance contratad
    - Objetivo: separar intención preventiva de intención urgente.
    - Contenido sugerido: limpieza, revisión de resistencia, termostato, válvulas, seguridad y vida útil.
 
-## Páginas por zona
-
-Crear páginas por zona puede ayudar, pero solo si cada una tiene contenido único y útil. Evitar generar páginas repetidas con cambios mínimos de barrio.
-
-Prioridad sugerida:
-
-1. `/reparacion-calefones-pocitos`
-2. `/reparacion-calefones-cordon`
-3. `/reparacion-calefones-carrasco`
-4. `/reparacion-calefones-ciudad-de-la-costa`
-5. `/reparacion-calefones-las-piedras`
-
-Cada página debería incluir cobertura real, tiempos estimados, problemas comunes de la zona si aplica, marcas atendidas y CTA directo.
-
 ## Contenidos de apoyo
 
 También se puede sumar una sección de guías cortas para búsquedas informativas que luego conviertan:
@@ -49,13 +35,3 @@ También se puede sumar una sección de guías cortas para búsquedas informativ
 - "Qué datos mandar por WhatsApp para pedir presupuesto"
 
 Estas guías deben enlazar internamente a la home o a las páginas de servicio y cerrar siempre con WhatsApp/teléfono.
-
-## Medición futura
-
-Cuando el cliente entregue los IDs reales de Google, completar:
-
-- `NEXT_PUBLIC_GA_ID`
-- `NEXT_PUBLIC_GOOGLE_ADS_ID`
-- `NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL`
-
-Con eso se podrán medir clics en WhatsApp y llamadas como conversiones.

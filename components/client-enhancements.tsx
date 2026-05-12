@@ -1,12 +1,10 @@
 "use client"
 
 import { useEffect } from "react"
-import { trackContactEvent, type ContactChannel } from "@/lib/analytics"
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
 const gtagId = gaId || googleAdsId
-const contactSelector = "[data-contact-channel][data-contact-location]"
 
 function runWhenIdle(callback: () => void) {
   const schedule = () => {
@@ -70,10 +68,6 @@ function initializeVercelAnalytics() {
   })
 }
 
-function isContactChannel(value: string | undefined): value is ContactChannel {
-  return value === "phone" || value === "whatsapp"
-}
-
 export function ClientEnhancements() {
   useEffect(() => {
     const revealElements = Array.from(document.querySelectorAll(".scroll-reveal"))
@@ -103,24 +97,6 @@ export function ClientEnhancements() {
   useEffect(() => {
     initializeGoogleTag()
     initializeVercelAnalytics()
-
-    const handleContactClick = (event: MouseEvent) => {
-      if (!(event.target instanceof Element)) {
-        return
-      }
-
-      const link = event.target.closest<HTMLElement>(contactSelector)
-      const channel = link?.dataset.contactChannel
-      const location = link?.dataset.contactLocation
-
-      if (isContactChannel(channel) && location) {
-        trackContactEvent(channel, location)
-      }
-    }
-
-    document.addEventListener("click", handleContactClick, { capture: true })
-
-    return () => document.removeEventListener("click", handleContactClick, { capture: true })
   }, [])
 
   return null
