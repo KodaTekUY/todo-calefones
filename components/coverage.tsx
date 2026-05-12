@@ -47,13 +47,13 @@ export function Coverage() {
               05 — Zona de cobertura
             </div>
             <h2 className="headline text-3xl sm:text-4xl lg:text-5xl">
-              Brindamos servicio en <span className="display-italic text-amber-deep">todo Montevideo</span>.
+              Técnicos de calefones en <span className="display-italic text-amber-deep">Montevideo y Canelones</span>
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 scroll-reveal">
             <p className="text-lg text-ink/70 leading-relaxed mt-2">
-              Atendemos toda Montevideo y la zona metropolitana de Canelones. Si su barrio no aparece, igual contáctenos
-              —seguramente llegamos.
+              Atendemos reparación, instalación y service de calefones en toda Montevideo y la zona metropolitana de
+              Canelones. Si su barrio no aparece, igual contáctenos.
             </p>
           </div>
         </div>

@@ -11,23 +11,22 @@ export function WhatWeDo() {
               01 — ¿Qué hacemos?
             </div>
             <h2 className="headline text-3xl sm:text-4xl lg:text-5xl">
-              Somos la <span className="display-italic text-amber-deep">primer empresa</span> especializada en calefones.
+              Servicio técnico especializado en <span className="display-italic text-amber-deep">calefones</span>.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 scroll-reveal">
             <div className="space-y-4 text-ink/75 leading-relaxed text-[17px]">
               <p>
-                Realizamos la reparación o instalación de su calefón en el momento de la visita a su domicilio. Solicite
-                su presupuesto vía llamada telefónica o WhatsApp.
+                Realizamos reparación, instalación, mantenimiento y service de calefones a domicilio. Solicite su
+                presupuesto vía llamada telefónica o WhatsApp.
               </p>
               <p>
-                En TodoCalefones nos especializamos exclusivamente en la reparación de Calefones, garantizando a
-                nuestros clientes la confianza de disponer de un equipo de expertos altamente calificados.
+                En TodoCalefones nos especializamos exclusivamente en calefones, desde fallas por falta de agua caliente
+                hasta pérdidas, problemas eléctricos y sustitución de equipos.
               </p>
               <p>
-                El Calefón es un electrodoméstico que conlleva ciertos riesgos: la seguridad de usted y su familia está
-                al cuidado de profesionales con años de experiencia. Nos encargamos de la reparación e instalación de
-                termotanques de todas las marcas.
+                El calefón es un equipo que requiere manipulación técnica responsable: la seguridad de usted y su familia
+                queda al cuidado de profesionales con experiencia. Trabajamos con todas las marcas.
               </p>
             </div>
           </div>

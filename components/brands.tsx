@@ -1,6 +1,7 @@
 "use client"
 
 import { MessageCircle } from "lucide-react"
+import { trackContactEvent } from "@/lib/analytics"
 
 const allBrands = [
   "James",
@@ -83,6 +84,7 @@ export function Brands() {
             href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20mi%20calefón%20es%20marca%20___"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContactEvent("whatsapp", "brands")}
             className="inline-flex items-center gap-2 text-amber-deep font-medium hover:text-petrol transition-colors"
           >
             <MessageCircle className="w-4 h-4" />

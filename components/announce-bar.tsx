@@ -1,6 +1,7 @@
 "use client"
 
 import { Phone } from "lucide-react"
+import { trackContactEvent } from "@/lib/analytics"
 
 export function AnnounceBar() {
   return (
@@ -11,9 +12,9 @@ export function AnnounceBar() {
           Disponible hoy
         </span>
         <span className="hidden sm:inline text-cream/70">·</span>
-        <span className="hidden sm:inline">Servicio en Montevideo y Canelones</span>
+        <span className="hidden sm:inline">Reparación de calefones en Montevideo y Canelones</span>
         <span className="text-cream/50 mx-1 sm:mx-2">·</span>
-        <a href="tel:091622275" className="quiet-link font-medium">
+        <a href="tel:091622275" onClick={() => trackContactEvent("phone", "announce-bar")} className="quiet-link font-medium">
           <div className="flex items-center gap-1">
             <Phone className="w-3 h-3" />
             <span>091 622 275</span>

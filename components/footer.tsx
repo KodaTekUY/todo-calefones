@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { trackContactEvent } from "@/lib/analytics"
 
 export function Footer() {
   return (
@@ -22,20 +23,26 @@ export function Footer() {
               <span className="font-semibold text-white display-italic pt-1">Calefones</span>
             </div>
             <p className="text-sm text-cream/60 leading-relaxed max-w-md">
-              La primer empresa con técnicos especializados en reparación, mantenimiento y service de calefones en
-              Montevideo. Servicio en todo Montevideo y Canelones.
+              Técnicos especializados en reparación, instalación, mantenimiento y service de calefones en Montevideo y
+              Canelones.
             </p>
           </div>
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-cream/50 mb-4">Contacto</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="tel:091622275" className="quiet-link">
+                <a href="tel:091622275" onClick={() => trackContactEvent("phone", "footer")} className="quiet-link">
                   091 622 275
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/59891622275" className="quiet-link" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/59891622275"
+                  className="quiet-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackContactEvent("whatsapp", "footer")}
+                >
                   WhatsApp directo
                 </a>
               </li>
@@ -44,10 +51,10 @@ export function Footer() {
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-cream/50 mb-4">Servicios</div>
             <ul className="space-y-2 text-sm text-cream/75">
-              <li>Reparaciones</li>
-              <li>Instalaciones</li>
-              <li>Mantenimiento</li>
-              <li>Asesoramiento</li>
+              <li>Reparación de calefones</li>
+              <li>Instalación de calefones</li>
+              <li>Mantenimiento y service</li>
+              <li>Calefón roto</li>
             </ul>
           </div>
         </div>

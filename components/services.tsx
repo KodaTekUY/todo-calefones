@@ -3,9 +3,9 @@
 const services = [
   {
     number: "01",
-    title: "Instalación",
+    title: "Instalación de calefones",
     description:
-      "Realizamos la adecuada instalación de Calefones nuevos y también llevamos a cabo la sustitución de antiguos termotanques.",
+      "Instalamos calefones nuevos y sustituimos termotanques antiguos, cuidando conexiones, seguridad y puesta en funcionamiento.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#0F3D3E" strokeWidth="1.5" aria-hidden="true">
         <path d="M8 32h24M12 32V12a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v20" />
@@ -16,9 +16,9 @@ const services = [
   },
   {
     number: "02",
-    title: "Reparación",
+    title: "Reparación de calefones",
     description:
-      "Nuestra empresa se enfoca exclusivamente en el servicio de reparación de Calefones. Contamos con un equipo de técnicos altamente especializados en esta área.",
+      "Reparamos calefones que no calientan, pierden agua, cortan la térmica o presentan fallas de termostato, resistencia o válvula.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#0F3D3E" strokeWidth="1.5" aria-hidden="true">
         <rect x="11" y="6" width="18" height="28" rx="2" />
@@ -29,9 +29,9 @@ const services = [
   },
   {
     number: "03",
-    title: "Mantenimiento",
+    title: "Mantenimiento y service",
     description:
-      "¿Estaba al tanto de que se aconseja realizar anualmente una revisión de los componentes y la sustitución del termostato?",
+      "Realizamos service preventivo, revisión de componentes y mantenimiento para prolongar la vida útil del calefón.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#0F3D3E" strokeWidth="1.5" aria-hidden="true">
         <circle cx="20" cy="20" r="11" />
@@ -42,8 +42,9 @@ const services = [
   },
   {
     number: "04",
-    title: "Asesoramiento",
-    description: "También ofrecemos orientación para emprendedores y empresas que necesitan apoyo técnico especializado.",
+    title: "Calefón roto",
+    description:
+      "Te orientamos por WhatsApp cuando el calefón deja de calentar, gotea, hace ruido o muestra señales de falla eléctrica.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#0F3D3E" strokeWidth="1.5" aria-hidden="true">
         <path d="M12 28V16a8 8 0 0 1 16 0v12" />
@@ -65,13 +66,13 @@ export function Services() {
               02 — Servicios
             </div>
             <h2 className="headline text-3xl sm:text-4xl lg:text-5xl">
-              Lo que <span className="display-italic text-amber-deep">resolvemos</span>
+              Reparación, instalación y <span className="display-italic text-amber-deep">service</span>
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 scroll-reveal">
             <p className="text-lg text-ink/70 leading-relaxed mt-2">
-              Cuatro servicios principales para mantener su calefón funcionando en óptimas condiciones, todos los días
-              del año.
+              Cubrimos las consultas más frecuentes: calefón roto, pérdida de agua, falta de agua caliente,
+              instalación, mantenimiento y cambio de repuestos.
             </p>
           </div>
         </div>

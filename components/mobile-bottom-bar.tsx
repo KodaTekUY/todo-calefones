@@ -1,6 +1,7 @@
 "use client"
 
 import { MessageCircle, Phone } from "lucide-react"
+import { trackContactEvent } from "@/lib/analytics"
 
 export function MobileBottomBar() {
   return (
@@ -10,6 +11,7 @@ export function MobileBottomBar() {
           href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContactEvent("whatsapp", "mobile-bottom-bar")}
           className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-full text-sm font-semibold"
         >
           <MessageCircle className="w-5 h-5" fill="currentColor" />
@@ -17,6 +19,7 @@ export function MobileBottomBar() {
         </a>
         <a
           href="tel:091622275"
+          onClick={() => trackContactEvent("phone", "mobile-bottom-bar")}
           className="flex-1 inline-flex items-center justify-center gap-2 bg-amber text-petrol-deep py-3 rounded-full text-sm font-semibold"
         >
           <Phone className="w-4 h-4" />

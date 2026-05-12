@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { MessageCircle } from "lucide-react"
+import { trackContactEvent } from "@/lib/analytics"
 
 const navLinks = [
   { href: "#que-hacemos", label: "¿Qué hacemos?" },
@@ -16,7 +17,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-cream/85 backdrop-blur-md border-b border-line/60">
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
-        <Link href="#" className="flex items-center group" aria-label="TodoCalefones, ir al inicio">
+        <Link href="/" className="flex items-center group" aria-label="TodoCalefones, ir al inicio">
           <Image
             src="/logo.svg"
             alt="TodoCalefones"
@@ -41,6 +42,7 @@ export function Header() {
           href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContactEvent("whatsapp", "header")}
           className="inline-flex items-center gap-2 bg-petrol text-cream px-4 py-2.5 rounded-full text-sm font-medium hover:bg-petrol-deep transition-colors"
         >
           <MessageCircle className="w-4 h-4" fill="currentColor" />

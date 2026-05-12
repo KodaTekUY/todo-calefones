@@ -1,6 +1,7 @@
 "use client"
 
 import { MessageCircle, Camera, Send, CalendarCheck, MoveRight } from "lucide-react"
+import { trackContactEvent } from "@/lib/analytics"
 
 const steps = [
   {
@@ -39,12 +40,12 @@ export function HowItWorks() {
               03 — Cómo funciona
             </div>
             <h2 className="headline text-3xl sm:text-4xl lg:text-5xl">
-              ¡Consulte <span className="display-italic text-amber-deep">sin compromiso</span>!
+              Presupuesto para reparar o instalar su <span className="display-italic text-amber-deep">calefón</span>
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pt-4 scroll-reveal">
             <p className="text-lg text-ink/70 leading-relaxed">
-              En tres pasos sencillos obtienes tu presupuesto y coordinamos la visita.
+              En tres pasos sencillos recibimos la falla, orientamos el presupuesto y coordinamos una visita técnica.
             </p>
           </div>
         </div>
@@ -88,6 +89,7 @@ export function HowItWorks() {
                 {step.cta && (
                   <a
                     href={step.ctaHref}
+                    onClick={() => trackContactEvent("phone", "how-it-works-step")}
                     className={`font-medium quiet-link ml-1 ${step.highlight ? "text-amber" : "text-petrol"}`}
                   >
                     {step.cta}
@@ -116,6 +118,7 @@ export function HowItWorks() {
             href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContactEvent("whatsapp", "how-it-works")}
             className="inline-flex items-center gap-2.5 bg-petrol text-cream px-6 py-3.5 rounded-full text-base font-semibold hover:bg-petrol-deep transition-all hover:-translate-y-0.5"
           >
             <Send className="w-4 h-4" />

@@ -7,19 +7,19 @@ const reasons = [
     icon: Wrench,
     title: "Técnicos especializados",
     description:
-      "Nuestra empresa se enfoca exclusivamente en el servicio de reparación, mantenimiento y service de Calefones.",
+      "Trabajamos exclusivamente en reparación, instalación, mantenimiento y service de calefones.",
     highlighted: false,
   },
   {
     icon: Clock,
     title: "Vamos hoy",
-    description: "Atendemos su consulta dentro de las 24 horas. En la mayoría de los casos vamos el mismo día.",
+    description: "Atendemos consultas urgentes por calefón roto y coordinamos visita el mismo día cuando sea posible.",
     highlighted: true,
   },
   {
     icon: FileText,
     title: "Presupuesto sin compromiso",
-    description: "Expedimos presupuestos vía WhatsApp o llamada telefónica. Consulte sin obligación de contratar.",
+    description: "Podés enviar foto, marca y modelo por WhatsApp para recibir una orientación rápida.",
     highlighted: false,
   },
   {
@@ -53,8 +53,8 @@ export function WhyUs() {
           </div>
           <div className="lg:col-span-6 lg:col-start-7 scroll-reveal">
             <p className="text-lg text-cream/75 leading-relaxed mt-2">
-              Equipo de expertos altamente calificados, especialización exclusiva en calefones y respuesta dentro de las
-              24 horas.
+              Servicio técnico especializado en calefones para hogares, apartamentos, comercios y propiedades en
+              Montevideo y Canelones.
             </p>
           </div>
         </div>

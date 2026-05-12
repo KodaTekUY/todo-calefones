@@ -1,6 +1,7 @@
 "use client"
 
 import { MessageCircle, Phone, Clock, MapPin, Wrench, CheckCircle } from "lucide-react"
+import { trackContactEvent } from "@/lib/analytics"
 
 const badges = [
   { icon: Clock, label: "Atención hoy", highlight: true },
@@ -38,9 +39,9 @@ export function Hero() {
 
             {/* Main headline */}
             <h1 className="lh-1 headline text-[40px] sm:text-5xl lg:text-6xl xl:text-7xl max-w-2xl reveal delay-2">
-              Reparamos tu Calefón.
+              Reparación de calefones.
               <br />
-              <span className="display-italic text-amber-deep">¡Hoy mismo!</span>
+              <span className="display-italic text-amber-deep">Vamos hoy.</span>
             </h1>
 
             {/* Badges */}
@@ -62,8 +63,8 @@ export function Hero() {
 
             {/* Subtitle */}
             <p className="mt-5 max-w-xl text-base sm:text-lg text-ink/70 leading-relaxed reveal delay-3">
-              Solicite su presupuesto por WhatsApp o llamada. Respuesta rápida y visita el mismo día cuando sea
-              posible.
+              Si su calefón está roto, pierde agua, no calienta o necesita instalación, coordinamos diagnóstico,
+              reparación y service con técnicos especializados.
             </p>
 
             {/* CTA Buttons - More prominent on mobile */}
@@ -72,6 +73,7 @@ export function Hero() {
                 href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackContactEvent("whatsapp", "hero-primary")}
                 className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-6 py-3.5 rounded-full text-base font-semibold hover:bg-[#1FB955] transition-all hover:-translate-y-0.5 wa-pulse"
               >
                 <MessageCircle className="w-5 h-5" fill="currentColor" />
@@ -79,6 +81,7 @@ export function Hero() {
               </a>
               <a
                 href="tel:091622275"
+                onClick={() => trackContactEvent("phone", "hero-secondary")}
                 className="inline-flex items-center justify-center gap-2.5 bg-transparent text-ink border border-ink/25 px-6 py-3.5 rounded-full text-base font-semibold hover:bg-ink hover:text-cream transition-all"
               >
                 <Phone className="w-4 h-4" />
@@ -106,7 +109,9 @@ export function Hero() {
 
                 <h3 className="font-display text-2xl sm:text-3xl mb-2">Coordiná desde tu celular</h3>
 
-                <p className="text-cream/70 text-sm mb-6">Mandanos foto del calefón y te damos una orientación rápida</p>
+                <p className="text-cream/70 text-sm mb-6">
+                  Mandanos foto del calefón, marca y falla. Te orientamos y coordinamos la visita.
+                </p>
 
                 {/* Contact options */}
                 <div className="bg-petrol-deep/50 rounded-xl p-4 mb-4">
@@ -116,6 +121,7 @@ export function Hero() {
                       href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackContactEvent("whatsapp", "hero-card")}
                       className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-[#1FB955] hover:-translate-y-0.5"
                     >
                       <MessageCircle className="w-4 h-4" fill="currentColor" />
@@ -123,6 +129,7 @@ export function Hero() {
                     </a>
                     <a
                       href="tel:091622275"
+                      onClick={() => trackContactEvent("phone", "hero-card")}
                       className="inline-flex items-center justify-center gap-2.5 rounded-full border border-cream/20 bg-cream/5 px-4 py-3 text-sm font-semibold text-cream transition-all hover:bg-cream hover:text-petrol"
                     >
                       <Phone className="w-4 h-4" />
