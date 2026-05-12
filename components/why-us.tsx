@@ -1,5 +1,3 @@
-"use client"
-
 import { Wrench, Clock, FileText, Wallet, Zap } from "lucide-react"
 
 const reasons = [

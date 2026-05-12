@@ -12,7 +12,6 @@ import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { MobileBottomBar } from "@/components/mobile-bottom-bar"
-import { ScrollRevealProvider } from "@/components/scroll-reveal-provider"
 
 export default function Home() {
   return (
@@ -23,15 +22,13 @@ export default function Home() {
         <main>
           <Hero />
           <BrandsMarquee />
-          <ScrollRevealProvider>
-            <WhatWeDo />
-            <Services />
-            <HowItWorks />
-            <WhyUs />
-            <Coverage />
-            <Brands />
-            <FinalCTA />
-          </ScrollRevealProvider>
+          <WhatWeDo />
+          <Services />
+          <HowItWorks />
+          <WhyUs />
+          <Coverage />
+          <Brands />
+          <FinalCTA />
         </main>
         <Footer />
       </div>

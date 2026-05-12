@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Plus_Jakarta_Sans, Fraunces } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import Script from "next/script"
+import { ClientEnhancements } from "@/components/client-enhancements"
 import "./globals.css"
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -161,25 +160,10 @@ export default function RootLayout({
             __html: JSON.stringify(businessJsonLd),
           }}
         />
-        {gtagId && (
-          <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`} strategy="afterInteractive" />
-            <Script id="todo-calefones-gtag" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                window.gtag = gtag;
-                gtag('js', new Date());
-                ${gaId ? `gtag('config', '${gaId}');` : ""}
-                ${googleAdsId ? `gtag('config', '${googleAdsId}');` : ""}
-              `}
-            </Script>
-          </>
-        )}
       </head>
       <body className="font-sans antialiased">
         {children}
-        {process.env.NODE_ENV === "production" && <Analytics />}
+        <ClientEnhancements />
       </body>
     </html>
   )

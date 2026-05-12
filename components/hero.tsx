@@ -1,5 +1,3 @@
-"use client"
-
 import { MessageCircle, Phone, Clock, MapPin, Wrench, CheckCircle } from "lucide-react"
 import { trackContactEvent } from "@/lib/analytics"
 

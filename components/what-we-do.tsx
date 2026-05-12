@@ -1,5 +1,3 @@
-"use client"
-
 export function WhatWeDo() {
   return (
     <section id="que-hacemos" className="py-16 sm:py-24 lg:py-28 relative overflow-hidden">

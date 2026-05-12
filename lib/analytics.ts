@@ -1,10 +1,11 @@
-type ContactChannel = "whatsapp" | "phone"
+export type ContactChannel = "whatsapp" | "phone"
 
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
 const googleAdsConversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL
 
 declare global {
   interface Window {
+    dataLayer?: unknown[]
     gtag?: (...args: unknown[]) => void
   }
 }
