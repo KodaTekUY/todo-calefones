@@ -41,7 +41,7 @@ export function Coverage() {
     <section id="cobertura" className="py-16 sm:py-24 lg:py-28">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-12 lg:mb-16">
-          <div className="lg:col-span-5 scroll-reveal">
+          <div className="lg:col-span-6 scroll-reveal">
             <div className="text-xs uppercase tracking-[0.25em] text-ink/55 mb-5">
               <span className="inline-block w-8 h-px bg-ink/40 align-middle mr-3" />
               05 — Zona de cobertura
