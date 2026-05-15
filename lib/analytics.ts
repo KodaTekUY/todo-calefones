@@ -10,8 +10,32 @@ declare global {
   }
 }
 
-export function trackContactEvent(channel: ContactChannel, location: string) {
+type TrackContactOptions = {
+  eventCallback?: () => void
+}
+
+function runOnce(callback?: () => void) {
+  if (!callback) {
+    return undefined
+  }
+
+  let hasRun = false
+
+  return () => {
+    if (hasRun) {
+      return
+    }
+
+    hasRun = true
+    callback()
+  }
+}
+
+export function trackContactEvent(channel: ContactChannel, location: string, options: TrackContactOptions = {}) {
+  const eventCallback = runOnce(options.eventCallback)
+
   if (typeof window === "undefined" || !window.gtag) {
+    eventCallback?.()
     return
   }
 
@@ -25,6 +49,11 @@ export function trackContactEvent(channel: ContactChannel, location: string) {
   if (googleAdsId && googleAdsConversionLabel) {
     window.gtag("event", "conversion", {
       send_to: `${googleAdsId}/${googleAdsConversionLabel}`,
+      event_callback: eventCallback,
+      event_timeout: 1000,
     })
+    return
   }
+
+  eventCallback?.()
 }

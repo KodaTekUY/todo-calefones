@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Plus_Jakarta_Sans, Fraunces } from "next/font/google"
+import Script from "next/script"
 import { ClientEnhancements } from "@/components/client-enhancements"
 import "./globals.css"
 
@@ -75,7 +76,7 @@ export const viewport: Viewport = {
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
-const gtagId = gaId || googleAdsId
+const gtagId = googleAdsId || gaId
 
 const businessJsonLd = {
   "@context": "https://schema.org",
@@ -160,6 +161,29 @@ export default function RootLayout({
             __html: JSON.stringify(businessJsonLd),
           }}
         />
+        {gtagId && (
+          <>
+            <Script
+              id="google-tag-loader"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="google-tag-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  window.gtag = window.gtag || gtag;
+                  gtag('js', new Date());
+                  ${gaId ? `gtag('config', ${JSON.stringify(gaId)});` : ""}
+                  ${googleAdsId ? `gtag('config', ${JSON.stringify(googleAdsId)});` : ""}
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className="font-sans antialiased">
         {children}

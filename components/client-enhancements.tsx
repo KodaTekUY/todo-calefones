@@ -2,10 +2,6 @@
 
 import { useEffect } from "react"
 
-const gaId = process.env.NEXT_PUBLIC_GA_ID
-const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
-const gtagId = gaId || googleAdsId
-
 function runWhenIdle(callback: () => void) {
   const schedule = () => {
     if (typeof window.requestIdleCallback === "function") {
@@ -22,38 +18,6 @@ function runWhenIdle(callback: () => void) {
   }
 
   window.addEventListener("load", schedule, { once: true })
-}
-
-function initializeGoogleTag() {
-  if (!gtagId || window.gtag) {
-    return
-  }
-
-  window.dataLayer = window.dataLayer || []
-  window.gtag = (...args: unknown[]) => {
-    window.dataLayer?.push(args)
-  }
-
-  window.gtag("js", new Date())
-
-  if (gaId) {
-    window.gtag("config", gaId)
-  }
-
-  if (googleAdsId) {
-    window.gtag("config", googleAdsId)
-  }
-
-  runWhenIdle(() => {
-    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${gtagId}"]`)) {
-      return
-    }
-
-    const script = document.createElement("script")
-    script.async = true
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${gtagId}`
-    document.head.appendChild(script)
-  })
 }
 
 function initializeVercelAnalytics() {
@@ -95,7 +59,6 @@ export function ClientEnhancements() {
   }, [])
 
   useEffect(() => {
-    initializeGoogleTag()
     initializeVercelAnalytics()
   }, [])
 
