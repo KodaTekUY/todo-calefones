@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 import { TrackedLink } from "@/components/tracked-link"
 
 export function AnnounceBar() {
@@ -12,10 +12,17 @@ export function AnnounceBar() {
         <span className="hidden sm:inline text-cream/70">·</span>
         <span className="hidden sm:inline">Reparación de calefones en Montevideo y Canelones</span>
         <span className="text-cream/50 mx-1 sm:mx-2">·</span>
-        <TrackedLink href="tel:091622275" channel="phone" location="announce-bar" className="quiet-link font-medium">
+        <TrackedLink
+          href="https://wa.me/59891622275?text=Hola,%20vengo%20de%20TodoCalefones.com.uy:%20"
+          target="_blank"
+          rel="noopener noreferrer"
+          channel="whatsapp"
+          location="announce-bar"
+          className="quiet-link font-medium"
+        >
           <div className="flex items-center gap-1">
-            <Phone className="w-3 h-3" />
-            <span>091 622 275</span>
+            <MessageCircle className="w-3 h-3" />
+            <span>Atendemos solo por WhatsApp</span>
           </div>
         </TrackedLink>
       </span>

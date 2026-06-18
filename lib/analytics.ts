@@ -1,4 +1,4 @@
-export type ContactChannel = "whatsapp" | "phone"
+export type ContactChannel = "whatsapp"
 
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
 const googleAdsConversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL

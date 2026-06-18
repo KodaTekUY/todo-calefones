@@ -6,9 +6,7 @@ const steps = [
     number: "01",
     icon: MessageCircle,
     title: "Escribinos",
-    description: "Vía WhatsApp o llamada telefónica al",
-    cta: "091 622 275",
-    ctaHref: "tel:091622275",
+    description: "Escribinos por WhatsApp.",
     highlight: false,
   },
   {
@@ -84,16 +82,6 @@ export function HowItWorks() {
 
               <p className={`text-sm leading-relaxed ${step.highlight ? "text-cream/70" : "text-ink/70"}`}>
                 {step.description}
-                {step.cta && (
-                  <TrackedLink
-                    href={step.ctaHref}
-                    channel="phone"
-                    location="how-it-works-step"
-                    className={`font-medium quiet-link ml-1 ${step.highlight ? "text-amber" : "text-petrol"}`}
-                  >
-                    {step.cta}
-                  </TrackedLink>
-                )}
               </p>
 
               {/* Arrow connector for desktop */}

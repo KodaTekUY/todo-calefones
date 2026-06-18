@@ -16,7 +16,7 @@ export function WhatWeDo() {
             <div className="space-y-4 text-ink/75 leading-relaxed text-[17px]">
               <p>
                 Realizamos reparación, instalación, mantenimiento y service de calefones a domicilio. Solicite su
-                presupuesto vía llamada telefónica o WhatsApp.
+                presupuesto por WhatsApp.
               </p>
               <p>
                 En TodoCalefones nos especializamos exclusivamente en calefones, desde fallas por falta de agua caliente

@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Clock, MapPin, Wrench, CheckCircle } from "lucide-react"
+import { MessageCircle, Clock, MapPin, Wrench, CheckCircle } from "lucide-react"
 import { TrackedLink } from "@/components/tracked-link"
 
 const badges = [
@@ -78,15 +78,6 @@ export function Hero() {
                 <MessageCircle className="w-5 h-5" fill="currentColor" />
                 Envíenos un WhatsApp
               </TrackedLink>
-              <TrackedLink
-                href="tel:091622275"
-                channel="phone"
-                location="hero-secondary"
-                className="inline-flex items-center justify-center gap-2.5 bg-transparent text-ink border border-ink/25 px-6 py-3.5 rounded-full text-base font-semibold hover:bg-ink hover:text-cream transition-all"
-              >
-                <Phone className="w-4 h-4" />
-                091 622 275
-              </TrackedLink>
             </div>
           </div>
 
@@ -127,15 +118,6 @@ export function Hero() {
                     >
                       <MessageCircle className="w-4 h-4" fill="currentColor" />
                       Enviar WhatsApp
-                    </TrackedLink>
-                    <TrackedLink
-                      href="tel:091622275"
-                      channel="phone"
-                      location="hero-card"
-                      className="inline-flex items-center justify-center gap-2.5 rounded-full border border-cream/20 bg-cream/5 px-4 py-3 text-sm font-semibold text-cream transition-all hover:bg-cream hover:text-petrol"
-                    >
-                      <Phone className="w-4 h-4" />
-                      Llamar 091 622 275
                     </TrackedLink>
                   </div>
                 </div>

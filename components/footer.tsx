@@ -28,11 +28,6 @@ export function Footer() {
             <div className="text-xs uppercase tracking-[0.2em] text-cream/50 mb-4">Contacto</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <TrackedLink href="tel:091622275" channel="phone" location="footer" className="quiet-link">
-                  091 622 275
-                </TrackedLink>
-              </li>
-              <li>
                 <TrackedLink
                   href="https://wa.me/59891622275"
                   className="quiet-link"
