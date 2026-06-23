@@ -50,7 +50,7 @@ export function Coverage() {
           </div>
           <div className="lg:col-span-6 lg:col-start-7 scroll-reveal">
             <p className="text-lg text-ink/70 leading-relaxed mt-2">
-              Atendemos reparación, instalación y service de calefones en toda Montevideo y la zona metropolitana de
+              Atendemos reparación, instalación y service de calefones en todo Montevideo y la zona metropolitana de
               Canelones. Si su barrio no aparece, igual contáctenos.
             </p>
           </div>

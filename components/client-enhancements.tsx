@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 function runWhenIdle(callback: () => void) {
   const schedule = () => {
@@ -33,6 +34,10 @@ function initializeVercelAnalytics() {
 }
 
 export function ClientEnhancements() {
+  // Se vuelve a ejecutar en cada cambio de ruta para observar los .scroll-reveal
+  // de la página recién navegada (el layout no se remonta en navegación cliente).
+  const pathname = usePathname()
+
   useEffect(() => {
     const revealElements = Array.from(document.querySelectorAll(".scroll-reveal"))
 
@@ -56,7 +61,7 @@ export function ClientEnhancements() {
     revealElements.forEach((element) => observer.observe(element))
 
     return () => observer.disconnect()
-  }, [])
+  }, [pathname])
 
   useEffect(() => {
     initializeVercelAnalytics()

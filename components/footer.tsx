@@ -1,9 +1,11 @@
 import Image from "next/image"
+import Link from "next/link"
 import { TrackedLink } from "@/components/tracked-link"
+import { SERVICES } from "@/lib/services-content"
 
 export function Footer() {
   return (
-    <footer className="bg-petrol-deep text-cream py-12">
+    <footer className="bg-petrol-deep text-cream pt-12 pb-12 sm:pb-28">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-cream/15">
           <div className="md:col-span-2">
@@ -44,10 +46,13 @@ export function Footer() {
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-cream/50 mb-4">Servicios</div>
             <ul className="space-y-2 text-sm text-cream/75">
-              <li>Reparación de calefones</li>
-              <li>Instalación de calefones</li>
-              <li>Mantenimiento y service</li>
-              <li>Calefón roto</li>
+              {SERVICES.map((service) => (
+                <li key={service.slug}>
+                  <Link href={`/${service.slug}`} className="quiet-link">
+                    {service.navLabel}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

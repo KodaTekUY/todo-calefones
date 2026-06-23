@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next"
 import { Plus_Jakarta_Sans, Fraunces } from "next/font/google"
 import Script from "next/script"
 import { ClientEnhancements } from "@/components/client-enhancements"
+import { JsonLd } from "@/components/json-ld"
+import { getBusinessJsonLd, getWebSiteJsonLd } from "@/lib/seo"
 import "./globals.css"
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -78,74 +80,6 @@ const gaId = process.env.NEXT_PUBLIC_GA_ID
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
 const gtagId = googleAdsId || gaId
 
-const businessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "HVACBusiness"],
-  name: "TodoCalefones",
-  alternateName: "TodoCalefones.com.uy",
-  description:
-    "Técnicos especializados en reparación, instalación, mantenimiento y service de calefones en Montevideo y Canelones.",
-  image: "https://todocalefones.com.uy/open-graph.webp",
-  logo: "https://todocalefones.com.uy/logo.webp",
-  "@id": "https://todocalefones.com.uy/#localbusiness",
-  url: "https://todocalefones.com.uy/",
-  telephone: "+59891622275",
-  priceRange: "$$",
-  areaServed: [
-    { "@type": "City", name: "Montevideo" },
-    { "@type": "AdministrativeArea", name: "Canelones" },
-    { "@type": "City", name: "Ciudad de la Costa" },
-    { "@type": "City", name: "Las Piedras" },
-    { "@type": "City", name: "Pando" },
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+59891622275",
-    contactType: "customer service",
-    availableLanguage: "Spanish",
-    areaServed: "UY",
-  },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "08:00",
-    closes: "20:00",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Servicios de calefones",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Reparación de calefones",
-          serviceType: "Reparación de calefones",
-          areaServed: "Montevideo y Canelones",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Instalación de calefones",
-          serviceType: "Instalación de calefones",
-          areaServed: "Montevideo y Canelones",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Mantenimiento y service de calefones",
-          serviceType: "Mantenimiento de calefones",
-          areaServed: "Montevideo y Canelones",
-        },
-      },
-    ],
-  },
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -154,13 +88,8 @@ export default function RootLayout({
   return (
     <html lang="es-UY" className={`${plusJakarta.variable} ${fraunces.variable} bg-cream`}>
       <head>
-        <script
-          id="todo-calefones-jsonld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(businessJsonLd),
-          }}
-        />
+        <JsonLd id="todo-calefones-jsonld" data={getBusinessJsonLd()} />
+        <JsonLd id="todo-calefones-website-jsonld" data={getWebSiteJsonLd()} />
         {gtagId && (
           <>
             <Script

@@ -1,7 +1,11 @@
+import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
+
 const services = [
   {
     number: "01",
     title: "Instalación de calefones",
+    href: "/instalacion-calefon",
     description:
       "Instalamos calefones nuevos y sustituimos termotanques antiguos, cuidando conexiones, seguridad y puesta en funcionamiento.",
     icon: (
@@ -15,6 +19,7 @@ const services = [
   {
     number: "02",
     title: "Reparación de calefones",
+    href: "/reparacion-calefones-montevideo",
     description:
       "Reparamos calefones que no calientan, pierden agua, cortan la térmica o presentan fallas de termostato, resistencia o válvula.",
     icon: (
@@ -28,6 +33,7 @@ const services = [
   {
     number: "03",
     title: "Mantenimiento y service",
+    href: "/mantenimiento-calefones",
     description:
       "Realizamos service preventivo, revisión de componentes y mantenimiento para prolongar la vida útil del calefón.",
     icon: (
@@ -41,6 +47,7 @@ const services = [
   {
     number: "04",
     title: "Calefón roto",
+    href: "/calefon-roto",
     description:
       "Te orientamos por WhatsApp cuando el calefón deja de calentar, gotea, hace ruido o muestra señales de falla eléctrica.",
     icon: (
@@ -70,24 +77,35 @@ export function Services() {
           <div className="lg:col-span-6 lg:col-start-7 scroll-reveal">
             <p className="text-lg text-ink/70 leading-relaxed mt-2">
               Cubrimos las consultas más frecuentes: calefón roto, pérdida de agua, falta de agua caliente,
-              instalación, mantenimiento y cambio de repuestos.
+              instalación, mantenimiento y cambio de repuestos. Conocé también nuestro{" "}
+              <Link href="/service-calefones" className="quiet-link text-amber-deep font-medium">
+                service de calefones
+              </Link>
+              .
             </p>
           </div>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-px bg-line border border-line">
           {services.map((service, i) => (
-            <div
+            <Link
               key={i}
-              className="bg-cream p-6 sm:p-8 group hover:bg-cream-2 transition-colors scroll-reveal"
+              href={service.href}
+              className="bg-cream p-6 sm:p-8 group hover:bg-cream-2 transition-colors scroll-reveal block"
             >
               <div className="flex items-start justify-between mb-8">
                 <span className="number-display text-petrol/40 text-xl">{service.number}</span>
                 {service.icon}
               </div>
-              <h3 className="font-display text-xl sm:text-2xl mb-3">{service.title}</h3>
+              <h3 className="font-display text-xl sm:text-2xl mb-3 group-hover:text-petrol transition-colors">
+                {service.title}
+              </h3>
               <p className="text-ink/70 leading-relaxed text-sm sm:text-base">{service.description}</p>
-            </div>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-deep">
+                Ver servicio
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
+            </Link>
           ))}
         </div>
       </div>
