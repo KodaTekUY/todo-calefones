@@ -34,4 +34,4 @@ También se puede sumar una sección de guías cortas para búsquedas informativ
 - "Cada cuánto hacer service al calefón"
 - "Qué datos mandar por WhatsApp para pedir presupuesto"
 
-Estas guías deben enlazar internamente a la home o a las páginas de servicio y cerrar siempre con WhatsApp/teléfono.
+Estas guías deben enlazar internamente a la home o a las páginas de servicio y cerrar siempre con WhatsApp/teléfono. REDEPLOY
